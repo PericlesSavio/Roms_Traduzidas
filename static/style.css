@@ -1,0 +1,85 @@
+/* base */
+body {
+  padding: 0px;
+  background-color: #000000;
+  color: #ccc;
+  margin: 0; /* Safari/Chrome, other WebKit */ /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #5555cc;
+}
+
+a:hover {
+  color: #008cff;
+  font-weight: bolder;
+}
+
+/* estrutura */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-content: flex-start;
+  height: 100vh;
+}
+
+.grid-item {
+  width: auto;
+}
+
+.menu {
+  background-color: #140254;
+  height: 100vh;
+  width: 300px;
+  position: fixed;
+  border-right: 2px solid #333;
+  padding-left: auto;
+}
+
+.page {
+  padding-left: 316px;
+}
+
+.desktop {
+  text-align: center;
+}
+
+.mobile {
+  visibility: hidden;
+  height: 0;
+}
+
+/* tabela */
+table {
+  width: 100%;
+}
+
+th {
+  background-color: #333;
+  font-size: 12px;
+}
+
+.download {
+  width: 10rem;
+}
+
+/* */
+h1 {
+  font-size: 2rem;
+  font-weight: bolder;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.page h1 {
+  padding: 3rem 0 1rem 0;
+}
+
+img {
+  padding: 1rem 0;
+}/*# sourceMappingURL=style.css.map */

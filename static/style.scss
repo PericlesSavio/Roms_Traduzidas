@@ -1,0 +1,98 @@
+$color1: #140254;
+$color2: #000000;
+$menu_tamanho: 300px;
+
+
+
+/* base */
+
+body {
+    padding: 0px;
+    background-color: $color2;
+    color: #ccc;
+    margin: 0;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box; 
+}
+
+a {
+    text-decoration:none;
+    color: #5555cc;
+}
+
+a:hover {
+    color: #008cff;
+    font-weight: bolder;
+}
+
+
+
+/* estrutura */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-content:flex-start;
+    height: 100vh;
+}
+
+.grid-item {
+    width: auto;
+}
+
+.menu {
+    background-color: $color1;
+    height: 100vh;
+    width: $menu_tamanho;
+    position: fixed;
+    border-right: 2px solid #333;
+    padding-left: auto;
+}
+
+.page {
+    padding-left: calc($menu_tamanho + 16px);
+}
+
+.desktop {
+    text-align: center;
+}
+
+.mobile {
+    visibility: hidden;
+    height: 0;
+}
+
+
+/* tabela */
+table {
+    width: 100%;
+}
+th {
+    background-color: #333;
+    font-size: 12px;
+}
+.download {
+    width: 10rem;
+}
+
+/* */
+
+h1 {
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+
+.page h1 {
+    padding: 3rem 0 1rem 0;
+}
+
+img {
+    padding: 1rem 0;
+}

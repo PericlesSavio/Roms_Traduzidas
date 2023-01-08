@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Roms Traduzidas</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="/assets/icon.ico">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS-->
+        <link rel='stylesheet' href="{{ url_for('static', filename='style.css') }}">
+
+    </head>
+<body>
+
+    <div class="grid-container">
+
+            <div class="menu">
+                <div class="mobile">        
+                    <button onclick="myFunction()">Try it</button>
+                </div>
+        
+                <div class="desktop">    
+                    <img src="../static/logo.png" width="200px">
+                    <h2>Sistemas</h2>
+
+                    <table>
+                        {% for row in sistemas %}
+                        <tr>
+                            <td><a href="{{ url_for('sistema', _sistema_=row.sistema_slug) }}">{{ row.sistema }}</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+
+                    <h2>Gêneros</h2>
+
+                    <table>
+                        {% for row in generos %}
+                        <tr>
+                            <td><a href="{{ url_for('genero', _genero_=row.genero_slug) }}">{{ row.genero }}</a></td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+
+            <div class="page">
+
+                {% if index == 1 %}
+                    <h1>Jogos por sistema</h1>
+                    <table>
+                        <tr>
+                            <th class="console">Sistema</th>
+                            <th class="jogo">Jogo</th>
+                        </tr>
+                        {% for row in n_jogos_sistemas %}
+                        <tr>
+                            <td>{{ row.sistema }}</td>
+                            <td>{{ row.jogo }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+
+                    <h1>Jogos por gênero</h1>
+                    <table>
+                        <tr>
+                            <th class="console">Sistema</th>
+                            <th class="jogo">Jogo</th>
+                        </tr>
+                        {% for row in n_jogos_generos %}
+                        <tr>
+                            <td>{{ row.genero }}</td>
+                            <td>{{ row.jogo }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+
+                {% if index == 0 %}
+                    <h1>{{ titulo }}</h1>
+                    <table>
+                        <tr>
+                            <th class="jogo">Jogo</th>
+                            <th class="console">Sistema</th>
+                            <th class="gênero">Gênero</th>
+                            <th class="tradutor">Tradutor (Versão)</th>
+                            <th class="download">Download</th>
+                        </tr>
+                        {% for row in roms %}
+                        <tr>
+                            <td>{{ row.jogo }}</td>
+                            <td>{{ row.sistema }}</td>
+                            <td>{{ row.genero}}</td>
+                            <td>{{ row.tradutor }} ({{ row.versao }})</td>
+                            <td><a href="https://drive.google.com/uc?id={{ row.download }}&export=download">Download</a> ({{ row.tamanho }})</td>    
+                        </tr>
+                        {% endfor %}
+                    </table>
+                {% endif %}
+            </div>
+    </div>
+
+    
+<script>
+function myFunction() {
+   var element = document.getElementById("menu");
+   element.classList.toggle("mystyle");
+}
+</script>
+
+</body>
